@@ -17,7 +17,7 @@ if (bintrayConfigFile.exists()) {
     apply from: bintrayConfigFile.absolutePath
 }
 
-def isSnapshot = true
+def isSnapshot = false
 
 version '1.0.1'
 
