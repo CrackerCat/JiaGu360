@@ -11,7 +11,7 @@ JiaGu360 根据360加固命令实现app快捷加固的插件，解放双手，�
 ### Gradle插件使用方式
 
 
-#### 下功360加固软件 
+#### 下载360加固软件 
 
 [360加固软件下载地址](http://jiagu.360.cn/#/global/download)
 ![360加固软件界面](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/360jiagu_software.png)
@@ -48,16 +48,16 @@ apply plugin: 'jiagu360'
 
 ```groovy
 jiaGu360Config {
-	//360用户名
+	//必填，360用户名
     userName "XXXXXX"
-	//360密码
+	//必填， 360密码
     passWord "XXXXXX"
-	//360加固jiagu.jar包位置
+	//必填，360加固jiagu.jar包位置
 	jiaGuJarPath new File("D:\\XXXXX\\360jiagubao_windows_64\\jiagu\\jiagu.jar").absolutePath
 	
     items {
         debug {
-      		//需要签名的APK 路径
+      		//必填， 需要签名的APK 路径
             inputApkFilePath file("build/outputs/apk/tap_unsign.apk").absolutePath
         }
 		// ...... 可以添加更多选项
@@ -69,11 +69,11 @@ jiaGu360Config {
 ```groovy
 
 jiaGu360Config {
-	//360用户名
+	//必填， 360用户名
     userName "XXXXXX"
-	//360密码
+	//必填， 360密码
     passWord "XXXXXX"
-	//360加固jar包位置
+	//必填， 360加固jar包位置
 	jiaGuJarPath new File("D:\\XXXXX\\360jiagubao_windows_64\\jiagu\\jiagu.jar").absolutePath
 	
 	//加固配置项服务是否都支持
@@ -130,7 +130,7 @@ jiaGu360Config {
 
 	items {
         release {
-      		//需要加固的APK 路径
+      		//必填， 需要加固的APK 路径
             inputApkFilePath file("build/outputs/apk/XXXX.apk").absolutePath
 //自定义配置-----------------------------start-----------------------------------------------------------------------
 			//android 签名配置名称，默认android默认的'debug'签名配置，signingName="debug"
