@@ -182,7 +182,7 @@ jiaGu360Config {
 * 当`isSupportAll=true`时 ,统一配置里的可配置服务全部都支持
 
 *  `signingInfo` ,`signingName`都配置时,优化级为 `signingInfo` > `signingName`;当两个配置项都不配置时，默认使用 android项目里的默认debug签名。
-*  
+
 *  `signingName='release'` 签名信息配置的名称,
                   
 	![签名配置名称](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/sign_config_name.png)
@@ -191,7 +191,7 @@ jiaGu360Config {
 	
 	`./gradlew jiagu360${item配置名称(首页字母大小)}  `
 	
-	![item配置名称](https://raw.githubusercontent.com/903600017/ApkSign/master/pic/item_config_name.png)
+	![item配置名称](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/item_config_name.png)
 
 	 
 	 如上面的配置，生成签名包需要执行如下命令：
