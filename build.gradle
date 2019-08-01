@@ -1,0 +1,119 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+apply plugin: 'maven-publish'
+apply plugin: 'com.zf.plugins.GitCommand'
+apply plugin: 'com.jfrog.bintray'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+
+
+def bintrayConfigFile = new File("D:\\Users\\Lenovo\\Desktop\\APP\\buildScript\\bintrayConfig.gradle")
+if (bintrayConfigFile.exists()) {
+    apply from: bintrayConfigFile.absolutePath
+}
+
+def isSnapshot = true
+
+version '1.0.1'
+
+if (isSnapshot) {
+    version (version + "-SNAPSHOT")
+}
+
+group 'com.zf.plugins'
+
+def gitUrl = "https://github.com/903600017/JiaGu360.git"
+def siteUrl = gitUrl
+
+
+
+gitConfig {
+    versionCode 1
+    versionName version
+    changedLogFilePath file("config/log.txt").absolutePath
+    workDirPath project.projectDir.absolutePath
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId 'JiaGu360'
+            artifact sourcesJar {
+                classifier "sources"
+            }
+
+            pom {
+                name = "JiaGu360"
+                description = "Fast Use of 360 Reinforced Plug-ins"
+                url = siteUrl
+                licenses {
+                    license {
+                        name = "The Apache License, Version 2.0"
+                        url = "https://raw.githubusercontent.com/903600017/JiaGu360/master/LICENSE"
+                    }
+                }
+
+                developers {
+                    developer {
+                        id = "zf"
+                        name = "zf"
+                        email = "903600017@qq.com"
+                    }
+                }
+
+                organization {
+                    name = "zf"
+                    url = "https://github.com/903600017"
+                }
+            }
+        }
+    }
+
+    repositories {
+        maven {
+            url = uri('E:\\mvn-repo\\plugins\\repo')
+        }
+    }
+}
+
+
+bintray {
+    user = BINTRAY_USER
+    key = BINTRAY_API_KEY
+    publications 'mavenJava'
+    pkg {
+        repo = 'maven'
+        name = 'JiaGu360'
+        userOrg = 'zf'
+        licenses = ['Apache-2.0']
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+    }
+}
+
+////设置maven deployer
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            //设置插件的GAV参数
+//            pom.groupId = 'com.zf.plugins'
+//            pom.artifactId = 'JiaGu360'
+//            pom.version = '1.0.81'
+//            //文件发布到下面目录
+//            repository(url: uri('E:\\mvn-repo\\plugins\\repo'))
+//        }
+//    }
+//}
