@@ -25,7 +25,7 @@ JiaGu360 根据360加固命令实现app快捷加固的插件，解放双手，�
 
 #### 360加固 多渠道配置文件，
 
-![jiagu.jar文件路径](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/360jiagu_mul_channel.png.png)
+![jiagu.jar文件路径](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/360jiagu_mul_channel.png)
 
 
 #### 配置build.gradle
