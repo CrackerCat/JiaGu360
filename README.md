@@ -12,6 +12,22 @@ JiaGu360 根据360加固命令实现app快捷加固的插件，解放双手，�
 
 ### Gradle插件使用方式
 
+
+#### 下功360加固软件 
+
+[360加固软件下载地址](http://jiagu.360.cn/#/global/download)
+![360加固软件界面](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/360jiagu_software.png)
+
+
+#### 360加固 jiagu.jar，
+
+![jiagu.jar文件路径](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/360jiagu_software_dir.png)
+
+#### 360加固 多渠道配置文件，
+
+![jiagu.jar文件路径](https://raw.githubusercontent.com/903600017/JiaGu360/master/pic/360jiagu_mul_channel.png.png)
+
+
 #### 配置build.gradle
 
 在位于项目的根目录 `build.gradle` 文件中添加 ApkSign插件的依赖， 如下：
@@ -38,7 +54,7 @@ jiaGu360Config {
     userName "XXXXXX"
 	//360密码
     passWord "XXXXXX"
-	//360加固jar包位置
+	//360加固jiagu.jar包位置
 	jiaGuJarPath new File("D:\\XXXXX\\360jiagubao_windows_64\\jiagu\\jiagu.jar").absolutePath
 	
     items {
@@ -102,7 +118,7 @@ jiaGu360Config {
 	//自动签名
      autosign false
 
-	//自定义文件生成多渠道
+	//自定义文件生成多渠道，可以根据前面下载的360加固软件里的 “多渠道模板.txt” 编写
      mulpkgFilePath =new File("D:\\XXXXX\\360jiagubao_windows_64\\jiagu\\多渠道模板.txt")
 	//签名配置项
      signingInfo {
@@ -153,7 +169,7 @@ jiaGu360Config {
 			//自动签名
 			 autosign false
 
-			//自定义文件生成多渠道
+			//自定义文件生成多渠道，可以根据前面下载的360加固软件里的 “多渠道模板.txt” 编写
 			mulpkgFilePath =new File("D:\\XXXXX\\360jiagubao_windows_64\\jiagu\\多渠道模板.txt")
 			//签名配置项
 			 signingInfo {
