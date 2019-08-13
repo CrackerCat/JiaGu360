@@ -169,7 +169,7 @@ public class JiaGu360 {
         }
 
         if (mulpkgFilePath) {
-            cmdBuilder.append(" -pkgparam ${mulpkgFilePath}")
+            cmdBuilder.append(" -automulpkg -pkgparam ${mulpkgFilePath}")
         }
 
         exec(cmdBuilder.toString())

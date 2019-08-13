@@ -11,7 +11,6 @@ dependencies {
 }
 
 
-
 def bintrayConfigFile = new File("D:\\Users\\Lenovo\\Desktop\\APP\\buildScript\\bintrayConfig.gradle")
 if (bintrayConfigFile.exists()) {
     apply from: bintrayConfigFile.absolutePath
@@ -19,7 +18,7 @@ if (bintrayConfigFile.exists()) {
 
 def isSnapshot = false
 
-version '1.0.1'
+version '1.0.2'
 
 if (isSnapshot) {
     version (version + "-SNAPSHOT")

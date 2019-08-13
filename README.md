@@ -85,7 +85,7 @@ jiaGu360Config {
 	signingName 'debug'
 	//加固apk的输出目录
     outputApkDirPath new File("D:\\XXXXX\\360jiagubao_windows_64\\jiagu\\XXXX").absolutePath
-	//加固完成后是否打开输出目录。默认false
+	//加固完成后是否打开输出目录，只支持windows。默认false
     openOutputDir false
 	
 	
@@ -137,7 +137,7 @@ jiaGu360Config {
 			signingName 'debug'
 			//加固apk的输出目录
 			outputApkDirPath new File("D:\\XXXXX\\360jiagubao_windows_64\\jiagu\\XXXX").absolutePath
-			//加固完成后是否打开输出目录。默认false
+			//加固完成后是否打开输出目录，只支持windows。默认false
 			openOutputDir false
 
 		// 加固配置项服务-------------------------------start-------------------------------------
